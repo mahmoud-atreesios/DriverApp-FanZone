@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1CBC7DBF2BD5256E00010241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DBE2BD5256E00010241 /* AppDelegate.swift */; };
 		1CBC7DC12BD5256E00010241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DC02BD5256E00010241 /* SceneDelegate.swift */; };
-		1CBC7DC32BD5256E00010241 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DC22BD5256E00010241 /* ViewController.swift */; };
+		1CBC7DC32BD5256E00010241 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DC22BD5256E00010241 /* SignIn.swift */; };
 		1CBC7DC62BD5256E00010241 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CBC7DC42BD5256E00010241 /* Main.storyboard */; };
 		1CBC7DC82BD5256F00010241 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CBC7DC72BD5256F00010241 /* Assets.xcassets */; };
 		1CBC7DCB2BD5256F00010241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CBC7DC92BD5256F00010241 /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 		1CBC7DBB2BD5256E00010241 /* DriverApp-FanZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DriverApp-FanZone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBC7DBE2BD5256E00010241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CBC7DC02BD5256E00010241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1CBC7DC22BD5256E00010241 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1CBC7DC22BD5256E00010241 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		1CBC7DC52BD5256E00010241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CBC7DC72BD5256F00010241 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CBC7DCA2BD5256F00010241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +76,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C1267B12BD579FC00637E38 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1C1267B22BD57A1400637E38 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CBC7DC42BD5256E00010241 /* Main.storyboard */,
+				1CBC7DC22BD5256E00010241 /* SignIn.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1C1267B32BD57A2600637E38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1C1267B42BD57B0F00637E38 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				1CBC7DBE2BD5256E00010241 /* AppDelegate.swift */,
+				1CBC7DC02BD5256E00010241 /* SceneDelegate.swift */,
+				1CBC7DC92BD5256F00010241 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		1C1267B52BD57B3600637E38 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1CBC7DC72BD5256F00010241 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		1CBC7DB22BD5256E00010241 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +140,11 @@
 		1CBC7DBD2BD5256E00010241 /* DriverApp-FanZone */ = {
 			isa = PBXGroup;
 			children = (
-				1CBC7DBE2BD5256E00010241 /* AppDelegate.swift */,
-				1CBC7DC02BD5256E00010241 /* SceneDelegate.swift */,
-				1CBC7DC22BD5256E00010241 /* ViewController.swift */,
-				1CBC7DC42BD5256E00010241 /* Main.storyboard */,
-				1CBC7DC72BD5256F00010241 /* Assets.xcassets */,
-				1CBC7DC92BD5256F00010241 /* LaunchScreen.storyboard */,
+				1C1267B32BD57A2600637E38 /* Model */,
+				1C1267B22BD57A1400637E38 /* View */,
+				1C1267B12BD579FC00637E38 /* ViewModel */,
+				1C1267B52BD57B3600637E38 /* Assets */,
+				1C1267B42BD57B0F00637E38 /* Supporting files */,
 				1CBC7DCC2BD5256F00010241 /* Info.plist */,
 			);
 			path = "DriverApp-FanZone";
@@ -258,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CBC7DC32BD5256E00010241 /* ViewController.swift in Sources */,
+				1CBC7DC32BD5256E00010241 /* SignIn.swift in Sources */,
 				1CBC7DBF2BD5256E00010241 /* AppDelegate.swift in Sources */,
 				1CBC7DC12BD5256E00010241 /* SceneDelegate.swift in Sources */,
 			);
