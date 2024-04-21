@@ -16,6 +16,9 @@
 		1CBC7DD62BD5256F00010241 /* DriverApp_FanZoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DD52BD5256F00010241 /* DriverApp_FanZoneTests.swift */; };
 		1CBC7DE02BD5257000010241 /* DriverApp_FanZoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DDF2BD5257000010241 /* DriverApp_FanZoneUITests.swift */; };
 		1CBC7DE22BD5257000010241 /* DriverApp_FanZoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DE12BD5257000010241 /* DriverApp_FanZoneUITestsLaunchTests.swift */; };
+		1CBF69D22BD595A000FDADEA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF69D12BD595A000FDADEA /* TabBar.swift */; };
+		1CBF69D42BD596DF00FDADEA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF69D32BD596DF00FDADEA /* HomeVC.swift */; };
+		1CBF69D62BD5975500FDADEA /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF69D52BD5975500FDADEA /* ProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		1CBC7DDB2BD5257000010241 /* DriverApp-FanZoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DriverApp-FanZoneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBC7DDF2BD5257000010241 /* DriverApp_FanZoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverApp_FanZoneUITests.swift; sourceTree = "<group>"; };
 		1CBC7DE12BD5257000010241 /* DriverApp_FanZoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverApp_FanZoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1CBF69D12BD595A000FDADEA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		1CBF69D32BD596DF00FDADEA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		1CBF69D52BD5975500FDADEA /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,9 @@
 			children = (
 				1CBC7DC42BD5256E00010241 /* Main.storyboard */,
 				1CBC7DC22BD5256E00010241 /* SignIn.swift */,
+				1CBF69D12BD595A000FDADEA /* TabBar.swift */,
+				1CBF69D32BD596DF00FDADEA /* HomeVC.swift */,
+				1CBF69D52BD5975500FDADEA /* ProfileVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,9 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CBF69D62BD5975500FDADEA /* ProfileVC.swift in Sources */,
 				1CBC7DC32BD5256E00010241 /* SignIn.swift in Sources */,
+				1CBF69D42BD596DF00FDADEA /* HomeVC.swift in Sources */,
 				1CBC7DBF2BD5256E00010241 /* AppDelegate.swift in Sources */,
 				1CBC7DC12BD5256E00010241 /* SceneDelegate.swift in Sources */,
+				1CBF69D22BD595A000FDADEA /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
