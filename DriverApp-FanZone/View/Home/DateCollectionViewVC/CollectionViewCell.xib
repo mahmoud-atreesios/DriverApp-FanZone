@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dateCell" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="DriverApp_FanZone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSE-qd-EH6">
+                        <rect key="frame" x="5" y="39" width="70" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="L8E-y7-Tms"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZB-Sf-yo1">
+                        <rect key="frame" x="20" y="5" width="40" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="JwZ-or-xxw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="JSE-qd-EH6" secondAttribute="bottom" constant="17" id="QGU-2H-yDi"/>
+                <constraint firstAttribute="trailing" secondItem="VZB-Sf-yo1" secondAttribute="trailing" constant="20" id="U3n-eI-ZF7"/>
+                <constraint firstAttribute="trailing" secondItem="JSE-qd-EH6" secondAttribute="trailing" constant="5" id="UA2-Y7-YA0"/>
+                <constraint firstItem="JSE-qd-EH6" firstAttribute="top" secondItem="VZB-Sf-yo1" secondAttribute="bottom" constant="10" id="WIM-ZU-r4B"/>
+                <constraint firstItem="JSE-qd-EH6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="bjR-05-adn"/>
+                <constraint firstItem="VZB-Sf-yo1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="nmD-Ta-kTi"/>
+                <constraint firstItem="VZB-Sf-yo1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="shx-BO-Xf3"/>
+            </constraints>
+            <size key="customSize" width="133" height="108"/>
+            <point key="canvasLocation" x="151.14503816793894" y="40.140845070422536"/>
+        </collectionViewCell>
+    </objects>
+</document>
