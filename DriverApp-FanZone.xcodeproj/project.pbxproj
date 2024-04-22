@@ -19,7 +19,6 @@
 		1CBC7DE02BD5257000010241 /* DriverApp_FanZoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DDF2BD5257000010241 /* DriverApp_FanZoneUITests.swift */; };
 		1CBC7DE22BD5257000010241 /* DriverApp_FanZoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DE12BD5257000010241 /* DriverApp_FanZoneUITestsLaunchTests.swift */; };
 		1CBF69D22BD595A000FDADEA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF69D12BD595A000FDADEA /* TabBar.swift */; };
-		1CBF69D42BD596DF00FDADEA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF69D32BD596DF00FDADEA /* HomeVC.swift */; };
 		1CBF69D62BD5975500FDADEA /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF69D52BD5975500FDADEA /* ProfileVC.swift */; };
 		1CBF69D92BD59B2600FDADEA /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 1CBF69D82BD59B2600FDADEA /* FirebaseAppCheck */; };
 		1CBF69DB2BD59B2600FDADEA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1CBF69DA2BD59B2600FDADEA /* FirebaseAuth */; };
@@ -38,6 +37,11 @@
 		1CBF69F52BD59B2600FDADEA /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1CBF69F42BD59B2600FDADEA /* FirebaseStorageCombine-Community */; };
 		1CBF69F72BD59C6A00FDADEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF69F62BD59C6A00FDADEA /* GoogleService-Info.plist */; };
 		1CBF69FC2BD59D3300FDADEA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF69FB2BD59D3300FDADEA /* Alert.swift */; };
+		1CE8C9932BD6AEE200BF3840 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8C9922BD6AEE200BF3840 /* HomeVC.swift */; };
+		1CE8C9952BD6B08600BF3840 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8C9942BD6B08600BF3840 /* ViewModel.swift */; };
+		1CE8C9A12BD6B79300BF3840 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1CE8C9A02BD6B79300BF3840 /* RxCocoa */; };
+		1CE8C9A32BD6B79300BF3840 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 1CE8C9A22BD6B79300BF3840 /* RxRelay */; };
+		1CE8C9A52BD6B79300BF3840 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1CE8C9A42BD6B79300BF3840 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,10 +78,11 @@
 		1CBC7DDF2BD5257000010241 /* DriverApp_FanZoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverApp_FanZoneUITests.swift; sourceTree = "<group>"; };
 		1CBC7DE12BD5257000010241 /* DriverApp_FanZoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverApp_FanZoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1CBF69D12BD595A000FDADEA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		1CBF69D32BD596DF00FDADEA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1CBF69D52BD5975500FDADEA /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		1CBF69F62BD59C6A00FDADEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1CBF69FB2BD59D3300FDADEA /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		1CE8C9922BD6AEE200BF3840 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		1CE8C9942BD6B08600BF3840 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +90,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CE8C9A52BD6B79300BF3840 /* RxSwift in Frameworks */,
 				1CBF69E12BD59B2600FDADEA /* FirebaseDatabaseSwift in Frameworks */,
 				1CBF69E72BD59B2600FDADEA /* FirebaseFirestoreCombine-Community in Frameworks */,
 				1CBF69D92BD59B2600FDADEA /* FirebaseAppCheck in Frameworks */,
 				1CBF69EF2BD59B2600FDADEA /* FirebaseInstallations in Frameworks */,
 				1CBF69DD2BD59B2600FDADEA /* FirebaseAuthCombine-Community in Frameworks */,
 				1CBF69DF2BD59B2600FDADEA /* FirebaseDatabase in Frameworks */,
+				1CE8C9A12BD6B79300BF3840 /* RxCocoa in Frameworks */,
 				1CBF69DB2BD59B2600FDADEA /* FirebaseAuth in Frameworks */,
+				1CE8C9A32BD6B79300BF3840 /* RxRelay in Frameworks */,
 				1CBF69F52BD59B2600FDADEA /* FirebaseStorageCombine-Community in Frameworks */,
 				1CBF69E32BD59B2600FDADEA /* FirebaseDynamicLinks in Frameworks */,
 				1CBF69EB2BD59B2600FDADEA /* FirebaseFunctions in Frameworks */,
@@ -123,6 +131,7 @@
 		1C1267B12BD579FC00637E38 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1CE8C9942BD6B08600BF3840 /* ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -167,7 +176,7 @@
 		1C1974D52BD6A78E008C8BCE /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				1CBF69D32BD596DF00FDADEA /* HomeVC.swift */,
+				1CE8C9922BD6AEE200BF3840 /* HomeVC.swift */,
 				1C1974D62BD6A7A9008C8BCE /* DateCollectionViewVC */,
 			);
 			path = Home;
@@ -274,6 +283,9 @@
 				1CBF69F02BD59B2600FDADEA /* FirebasePerformance */,
 				1CBF69F22BD59B2600FDADEA /* FirebaseStorage */,
 				1CBF69F42BD59B2600FDADEA /* FirebaseStorageCombine-Community */,
+				1CE8C9A02BD6B79300BF3840 /* RxCocoa */,
+				1CE8C9A22BD6B79300BF3840 /* RxRelay */,
+				1CE8C9A42BD6B79300BF3840 /* RxSwift */,
 			);
 			productName = "DriverApp-FanZone";
 			productReference = 1CBC7DBB2BD5256E00010241 /* DriverApp-FanZone.app */;
@@ -349,6 +361,7 @@
 			mainGroup = 1CBC7DB22BD5256E00010241;
 			packageReferences = (
 				1CBF69D72BD59B2600FDADEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1CE8C99F2BD6B79200BF3840 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 1CBC7DBC2BD5256E00010241 /* Products */;
 			projectDirPath = "";
@@ -396,9 +409,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CBF69D62BD5975500FDADEA /* ProfileVC.swift in Sources */,
+				1CE8C9952BD6B08600BF3840 /* ViewModel.swift in Sources */,
+				1CE8C9932BD6AEE200BF3840 /* HomeVC.swift in Sources */,
 				1CBC7DC32BD5256E00010241 /* SignIn.swift in Sources */,
 				1C1974D92BD6A893008C8BCE /* CollectionViewCell.swift in Sources */,
-				1CBF69D42BD596DF00FDADEA /* HomeVC.swift in Sources */,
 				1CBC7DBF2BD5256E00010241 /* AppDelegate.swift in Sources */,
 				1CBC7DC12BD5256E00010241 /* SceneDelegate.swift in Sources */,
 				1CBF69D22BD595A000FDADEA /* TabBar.swift in Sources */,
@@ -754,6 +768,14 @@
 				minimumVersion = 9.6.0;
 			};
 		};
+		1CE8C99F2BD6B79200BF3840 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -831,6 +853,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1CBF69D72BD59B2600FDADEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		1CE8C9A02BD6B79300BF3840 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CE8C99F2BD6B79200BF3840 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		1CE8C9A22BD6B79300BF3840 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CE8C99F2BD6B79200BF3840 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		1CE8C9A42BD6B79300BF3840 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CE8C99F2BD6B79200BF3840 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
