@@ -60,7 +60,7 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e8J-DH-ism">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e8J-DH-ism">
                                                 <rect key="frame" x="8" y="46" width="385" height="80"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -75,24 +75,24 @@
                                                 <cells/>
                                             </collectionView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A9z-Ap-PXh">
-                                                <rect key="frame" x="8" y="134" width="377" height="488"/>
+                                                <rect key="frame" x="8" y="134" width="377" height="408"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="488" id="MXt-Rm-zaf"/>
+                                                    <constraint firstAttribute="height" constant="408" id="iL7-bM-Ou6"/>
                                                 </constraints>
                                             </tableView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="A9z-Ap-PXh" firstAttribute="leading" secondItem="YO3-zX-l6L" secondAttribute="leading" constant="8" id="5hi-Y9-y51"/>
-                                            <constraint firstAttribute="trailing" secondItem="A9z-Ap-PXh" secondAttribute="trailing" constant="8" id="83R-s0-BeJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="A9z-Ap-PXh" secondAttribute="trailing" constant="8" id="2Sf-AQ-r2l"/>
                                             <constraint firstItem="sfA-Su-The" firstAttribute="leading" secondItem="YO3-zX-l6L" secondAttribute="leading" constant="8" id="9so-q5-Oi2"/>
                                             <constraint firstAttribute="trailing" secondItem="e8J-DH-ism" secondAttribute="trailing" id="K2X-MH-DWQ"/>
+                                            <constraint firstItem="A9z-Ap-PXh" firstAttribute="leading" secondItem="YO3-zX-l6L" secondAttribute="leading" constant="8" id="U6Z-hL-Xyd"/>
                                             <constraint firstItem="sfA-Su-The" firstAttribute="top" secondItem="YO3-zX-l6L" secondAttribute="top" constant="8" id="ewY-v7-Nd2"/>
-                                            <constraint firstItem="A9z-Ap-PXh" firstAttribute="top" secondItem="e8J-DH-ism" secondAttribute="bottom" constant="8" id="lNg-px-PpA"/>
                                             <constraint firstItem="e8J-DH-ism" firstAttribute="leading" secondItem="YO3-zX-l6L" secondAttribute="leading" constant="8" id="m54-yH-k7K"/>
-                                            <constraint firstAttribute="bottom" secondItem="A9z-Ap-PXh" secondAttribute="bottom" id="vsx-T6-0p7"/>
+                                            <constraint firstItem="A9z-Ap-PXh" firstAttribute="top" secondItem="e8J-DH-ism" secondAttribute="bottom" constant="8" id="xqD-F5-ThI"/>
                                             <constraint firstItem="e8J-DH-ism" firstAttribute="top" secondItem="sfA-Su-The" secondAttribute="bottom" constant="8" id="xxV-Pd-y0e"/>
+                                            <constraint firstAttribute="bottom" secondItem="A9z-Ap-PXh" secondAttribute="bottom" constant="80" id="z3X-Mn-ZpP"/>
                                         </constraints>
                                     </view>
                                 </subviews>
