@@ -14,7 +14,14 @@ class HomeVC: UIViewController {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dateCollectionView: UICollectionView!
     @IBOutlet weak var tripsTableView: UITableView!
-        
+    
+    var noTripsImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "nn"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
+    }()
+    
     let disposeBag = DisposeBag()
     let viewModel = HomeViewModel()
     var dates: [(date: Date, display: String)] = []
@@ -24,8 +31,8 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
         dateCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dateCell")
         tripsTableView.register(UINib(nibName: "TripsTableViewCell", bundle: nil), forCellReuseIdentifier: "tripsCell")
-        binding()
         viewModel.fetchTripsData(selectedDate: todayDate())
+        bindingDateCollectionViewToViewModel()
         bindingTripsTableViewToViewModel()
     }
     
@@ -38,7 +45,7 @@ class HomeVC: UIViewController {
 }
 
 extension HomeVC {
-    func binding() {
+    func bindingDateCollectionViewToViewModel() {
         let calendar = Calendar.current
         let today = Date()
         
@@ -54,7 +61,7 @@ extension HomeVC {
                 let shortenedDayName = String(dayName.prefix(3))
                 
                 let displayDate = "\(dayNumber)|\(shortenedDayName)"
-                dates.append((date: date, display: displayDate)) // Store both the Date object and the display string
+                dates.append((date: date, display: displayDate))
             }
         }
         
@@ -88,6 +95,21 @@ extension HomeVC {
 
 extension HomeVC {
     func bindingTripsTableViewToViewModel(){
+        
+        viewModel.tripsData
+            .asObservable()
+            .subscribe(onNext: { [weak self] trips in
+                if trips.isEmpty {
+                    self?.setNotTodayImageView()
+                    self?.tripsTableView.isHidden = true
+                    self?.noTripsImageView.isHidden = false
+                } else {
+                    self?.tripsTableView.isHidden = false
+                    self?.noTripsImageView.isHidden = true
+                }
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.tripsData
             .asObservable()
             .bind(to: tripsTableView.rx.items(cellIdentifier: "tripsCell", cellType: TripsTableViewCell.self)) { index, trips, cell in
@@ -95,9 +117,24 @@ extension HomeVC {
                 cell.busDestination.text = trips.destination
                 cell.travelTime.text = trips.time
                 cell.estimatedArrivalTime.text = trips.estimatedArrivalTime
+                print("\(self.viewModel.tripsData.value)")
             }
             .disposed(by: disposeBag)
     }
 }
 
 
+extension HomeVC{
+    func setNotTodayImageView(){
+        // Add noTripsImageView to the view
+        view.addSubview(noTripsImageView)
+
+        noTripsImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            noTripsImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noTripsImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200), // 100 points from the bottom
+            noTripsImageView.widthAnchor.constraint(equalToConstant: 200), // Adjust width as needed
+            noTripsImageView.heightAnchor.constraint(equalToConstant: 200) // Adjust height as needed
+        ])
+    }
+}
