@@ -240,7 +240,7 @@
             <connections>
                 <outlet property="busDestination" destination="x3e-jn-mSD" id="cG5-Jx-kok"/>
                 <outlet property="busStation" destination="zZR-sI-K1p" id="cYN-3G-pGc"/>
-                <outlet property="detailsButton" destination="J3p-eK-CVI" id="ADG-pf-1ME"/>
+                <outlet property="detailsLabel" destination="J3p-eK-CVI" id="7M3-9P-cUz"/>
                 <outlet property="estimatedArrivalTime" destination="MxS-iu-VfS" id="R8b-by-uth"/>
                 <outlet property="fixedImage" destination="HUe-Wr-DH9" id="AWV-3F-rVh"/>
                 <outlet property="numberOfFans" destination="NJ9-vX-ZJW" id="C2O-KX-rb7"/>

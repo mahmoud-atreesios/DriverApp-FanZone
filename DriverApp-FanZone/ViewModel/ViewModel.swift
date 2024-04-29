@@ -10,15 +10,17 @@ import RxSwift
 import RxCocoa
 import Firebase
 
-class HomeViewModel{
+class ViewModel{
+    
+    var selectedIndexPath = BehaviorRelay<IndexPath?>(value: IndexPath(item: 0, section: 0))
+    var tripsData = BehaviorRelay<[TripsDataModel]>.init(value: [])
+    var bookedFans = BehaviorRelay<[[String:String]]>.init(value: [])
     
     private let db = Firestore.firestore()
     
-    var tripsData = BehaviorRelay<[TripsDataModel]>.init(value: [])
-    var selectedIndexPath = BehaviorRelay<IndexPath?>(value: IndexPath(item: 0, section: 0))
 }
 
-extension HomeViewModel{
+extension ViewModel{
     func fetchTripsData(selectedDate: String){
         let userID = Auth.auth().currentUser?.uid
         
@@ -56,5 +58,32 @@ extension HomeViewModel{
                     }
                 }
         }
+    }
+}
+
+extension ViewModel{
+    func BookedFans(busNumber: String, travelDate: String, station: String, destination: String){
+        db.collection("Bus_Tickets")
+            .whereField("busNumber", isEqualTo: busNumber)
+            .whereField("travelDate", isEqualTo: travelDate)
+            .whereField("busStation", isEqualTo: station)
+            .whereField("stadiumDestination", isEqualTo: destination)
+            .whereField("ticketStatus", isEqualTo: "Activated")
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                    return
+                }
+                
+                guard let snapshot = snapshot else {
+                    print("No documents found")
+                    return
+                }
+                
+                let fetchedBookedFans = snapshot.documents.compactMap { $0.data() as? [String: String] }
+                
+                self.bookedFans.accept(fetchedBookedFans)
+            }
+        
     }
 }

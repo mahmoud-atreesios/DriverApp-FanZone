@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
     }()
     
     let disposeBag = DisposeBag()
-    let viewModel = HomeViewModel()
+    let viewModel = ViewModel()
     var dates: [(date: Date, display: String)] = []
     
     override func viewDidLoad() {
@@ -118,7 +118,23 @@ extension HomeVC {
                 cell.travelTime.text = trips.time
                 cell.estimatedArrivalTime.text = trips.estimatedArrivalTime
                 print("\(self.viewModel.tripsData.value)")
+                
+                cell.tapAction = {
+                    print("Details label tapped at indexPath: \(index)")
+
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    if let bookedFansVC = storyboard.instantiateViewController(withIdentifier: "BookedFansVC") as? BookedFansVC {
+                        bookedFansVC.busNumber = trips.busNumber
+                        bookedFansVC.travelDate = trips.date
+                        bookedFansVC.station = trips.station
+                        bookedFansVC.destination = trips.destination
+                        self.navigationController?.pushViewController(bookedFansVC, animated: true)
+                    }
+                }
+                
+                print("\(self.viewModel.tripsData.value)")
             }
+        
             .disposed(by: disposeBag)
     }
 }
@@ -128,7 +144,7 @@ extension HomeVC{
     func setNotTodayImageView(){
         // Add noTripsImageView to the view
         view.addSubview(noTripsImageView)
-
+        
         noTripsImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             noTripsImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
