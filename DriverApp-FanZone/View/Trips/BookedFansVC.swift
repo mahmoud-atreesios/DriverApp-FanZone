@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 class BookedFansVC: UIViewController {
-
+    
     @IBOutlet weak var bookedFansTableView: UITableView!
     @IBOutlet weak var startTripButton: UIButton!
     
@@ -32,9 +32,16 @@ class BookedFansVC: UIViewController {
     }
     
     @IBAction func startTripButtonPressed(_ sender: UIButton) {
+        showAlert(title: "The Trip is about to start.", message: "Are you sure you want to start the trip?", buttonTitle: "Start Trip", buttonAction: {
+            for cell in self.bookedFansTableView.visibleCells as! [BookedFansTableViewCell] {
+                if cell.rightButtonStalker {
+                    self.viewModel.updateFanBusTicketStatus(busNumber: self.busNumber, travelDate: self.travelDate, station: self.station, destination: self.destination, newTicketStatus: "Boarded")
+                } else if cell.leftButtonStalker {
+                    self.viewModel.updateFanBusTicketStatus(busNumber: self.busNumber, travelDate: self.travelDate, station: self.station, destination: self.destination, newTicketStatus: "Absent")
+                }
+            }
+        })
     }
-    
-    
 }
 
 extension BookedFansVC{

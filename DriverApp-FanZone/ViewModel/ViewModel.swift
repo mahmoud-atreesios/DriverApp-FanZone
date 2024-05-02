@@ -87,3 +87,37 @@ extension ViewModel{
         
     }
 }
+
+extension ViewModel {
+    func updateFanBusTicketStatus(busNumber: String, travelDate: String, station: String, destination: String, newTicketStatus: String) {
+        db.collection("Bus_Tickets")
+            .whereField("busNumber", isEqualTo: busNumber)
+            .whereField("travelDate", isEqualTo: travelDate)
+            .whereField("busStation", isEqualTo: station)
+            .whereField("stadiumDestination", isEqualTo: destination)
+            .whereField("ticketStatus", isEqualTo: "Activated")
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                    return
+                }
+
+                guard let snapshot = snapshot else {
+                    print("No documents found")
+                    return
+                }
+
+                for document in snapshot.documents {
+                    let documentRef = self.db.collection("Bus_Tickets").document(document.documentID)
+                    documentRef.updateData(["ticketStatus": newTicketStatus]) { error in
+                        if let error = error {
+                            print("Error updating document: \(error)")
+                        } else {
+                            print("Document successfully updated")
+                        }
+                    }
+                }
+            }
+    }
+}
+

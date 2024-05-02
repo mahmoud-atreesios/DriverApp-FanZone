@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class BookedFansTableViewCell: UITableViewCell {
     
@@ -19,31 +20,41 @@ class BookedFansTableViewCell: UITableViewCell {
     
     var rightButtonStalker = false
     var leftButtonStalker = false
+    var newTicketStatus: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
-        
         mainView.layer.cornerRadius = 10
         
     }
     
     @IBAction func rightButtonPressed(_ sender: UIButton) {
-        rightButtonStalker.toggle()
-        if rightButtonStalker{
+        if !rightButtonStalker {
             rightButton.tintColor = .black
-        }else{
-            rightButton.tintColor = .darkGray
+            wrongButton.tintColor = .darkGray
+            rightButtonStalker = true
+            leftButtonStalker = false
+            //newTicketStatus = "Boarded"
         }
         print("right button pressed")
+        
     }
     
     @IBAction func wrongButtonPressed(_ sender: UIButton) {
+        if !leftButtonStalker {
+            wrongButton.tintColor = .black
+            rightButton.tintColor = .darkGray
+            leftButtonStalker = true
+            rightButtonStalker = false
+           // newTicketStatus = "abscent"
+        }
+        print("left button pressed")
     }
     
 }
