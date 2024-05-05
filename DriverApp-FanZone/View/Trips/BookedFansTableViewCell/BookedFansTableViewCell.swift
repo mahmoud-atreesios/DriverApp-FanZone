@@ -20,7 +20,7 @@ class BookedFansTableViewCell: UITableViewCell {
     
     var rightButtonStalker = false
     var leftButtonStalker = false
-    var newTicketStatus: String?
+    var fanId: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,10 +40,8 @@ class BookedFansTableViewCell: UITableViewCell {
             wrongButton.tintColor = .darkGray
             rightButtonStalker = true
             leftButtonStalker = false
-            //newTicketStatus = "Boarded"
         }
         print("right button pressed")
-        
     }
     
     @IBAction func wrongButtonPressed(_ sender: UIButton) {
@@ -52,7 +50,6 @@ class BookedFansTableViewCell: UITableViewCell {
             rightButton.tintColor = .darkGray
             leftButtonStalker = true
             rightButtonStalker = false
-           // newTicketStatus = "abscent"
         }
         print("left button pressed")
     }

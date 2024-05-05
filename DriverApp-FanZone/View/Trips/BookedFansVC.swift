@@ -32,14 +32,20 @@ class BookedFansVC: UIViewController {
     }
     
     @IBAction func startTripButtonPressed(_ sender: UIButton) {
-        showAlert(title: "The Trip is about to start.", message: "Are you sure you want to start the trip?", buttonTitle: "Start Trip", buttonAction: {
+        showAlert(title: "The Trip is about to start.", message: "✅", firstButtonTitle: "Get Direction", secondButtonTitle: "Cancel", firstButtonAction: {
             for cell in self.bookedFansTableView.visibleCells as! [BookedFansTableViewCell] {
                 if cell.rightButtonStalker {
-                    self.viewModel.updateFanBusTicketStatus(busNumber: self.busNumber, travelDate: self.travelDate, station: self.station, destination: self.destination, newTicketStatus: "Boarded")
+                    if let fanID = cell.fanId {
+                        self.viewModel.updateFanBusTicketStatus(fanid: fanID, busNumber: self.busNumber, travelDate: self.travelDate, station: self.station, destination: self.destination, newTicketStatus: "Boarded")
+                    }
                 } else if cell.leftButtonStalker {
-                    self.viewModel.updateFanBusTicketStatus(busNumber: self.busNumber, travelDate: self.travelDate, station: self.station, destination: self.destination, newTicketStatus: "Absent")
+                    if let fanID = cell.fanId {
+                        self.viewModel.updateFanBusTicketStatus(fanid: fanID, busNumber: self.busNumber, travelDate: self.travelDate, station: self.station, destination: self.destination, newTicketStatus: "Absent")
+                    }
                 }
             }
+        }, secondButtonAction: {
+            self.dismiss(animated: true)
         })
     }
 }
@@ -52,10 +58,10 @@ extension BookedFansVC{
                 if let fanID = fan["userID"]?.prefix(4) {
                     cell.fanID.text = String(fanID)
                 }
+                cell.fanId = fan["userID"]
                 cell.numberOfSeats.text = fan["numberOfSeats"]
             }
             .disposed(by: disposeBag)
-        
     }
 }
 
