@@ -13,6 +13,7 @@
 		1C2173972BDA6FE000793B3C /* TripsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C2173952BDA6FE000793B3C /* TripsTableViewCell.xib */; };
 		1C2173992BDA7FB900793B3C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2173982BDA7FB900793B3C /* ImageView.swift */; };
 		1C3DDCE12BDD7DB800934710 /* TripsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DDCE02BDD7DB800934710 /* TripsDataModel.swift */; };
+		1CB583452BEC7B7F00E19278 /* DirectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB583442BEC7B7F00E19278 /* DirectionVC.swift */; };
 		1CBC7DBF2BD5256E00010241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DBE2BD5256E00010241 /* AppDelegate.swift */; };
 		1CBC7DC12BD5256E00010241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DC02BD5256E00010241 /* SceneDelegate.swift */; };
 		1CBC7DC32BD5256E00010241 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DC22BD5256E00010241 /* SignIn.swift */; };
@@ -75,6 +76,7 @@
 		1C2173952BDA6FE000793B3C /* TripsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripsTableViewCell.xib; sourceTree = "<group>"; };
 		1C2173982BDA7FB900793B3C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		1C3DDCE02BDD7DB800934710 /* TripsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDataModel.swift; sourceTree = "<group>"; };
+		1CB583442BEC7B7F00E19278 /* DirectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionVC.swift; sourceTree = "<group>"; };
 		1CBC7DBB2BD5256E00010241 /* DriverApp-FanZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DriverApp-FanZone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBC7DBE2BD5256E00010241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CBC7DC02BD5256E00010241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				1CF494292BDFD24D00D122ED /* BookedFansVC.swift */,
+				1CB583442BEC7B7F00E19278 /* DirectionVC.swift */,
 				1CF4942B2BDFD2B600D122ED /* BookedFansTableViewCell */,
 			);
 			path = Trips;
@@ -462,6 +465,7 @@
 				1CE8C9952BD6B08600BF3840 /* ViewModel.swift in Sources */,
 				1CE8C9932BD6AEE200BF3840 /* HomeVC.swift in Sources */,
 				1CBC7DC32BD5256E00010241 /* SignIn.swift in Sources */,
+				1CB583452BEC7B7F00E19278 /* DirectionVC.swift in Sources */,
 				1C2173992BDA7FB900793B3C /* ImageView.swift in Sources */,
 				1C2173962BDA6FE000793B3C /* TripsTableViewCell.swift in Sources */,
 				1C1974D92BD6A893008C8BCE /* CollectionViewCell.swift in Sources */,

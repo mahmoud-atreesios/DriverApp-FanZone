@@ -21,6 +21,7 @@ class SignIn: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loginButton.tintColor = UIColor(red: 138/255, green: 134/255, blue: 97/255, alpha: 1.0)
+        hideKeyboardWhenTappedAround()
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -29,7 +30,9 @@ class SignIn: UIViewController {
             //blurEffectView.removeFromSuperview()
             //self.isSavingData = false
             //self.loginButton.isEnabled = true
-            showAlert(title: "Email Required", message: "Please enter your email.")
+            showAlert(title: "Email Required", message: "Please enter your email.", firstButtonTitle: "Ok", firstButtonAction: {
+                self.dismiss(animated: true)
+            })
             return
         }
         guard let password = driverPassword.text, !password.isEmpty else {
@@ -37,7 +40,9 @@ class SignIn: UIViewController {
             //blurEffectView.removeFromSuperview()
             //self.isSavingData = false
             //self.loginButton.isEnabled = true
-            showAlert(title: "Password Required", message: "Please enter your password.")
+            showAlert(title: "Password Required", message: "Please enter your password.", firstButtonTitle: "Ok", firstButtonAction: {
+                self.dismiss(animated: true)
+            })
             return
         }
         
@@ -60,4 +65,18 @@ class SignIn: UIViewController {
 }
 
 extension SignIn{
+}
+
+
+// MARK: - HIDE KEYBOARD
+extension SignIn{
+    func hideKeyboardWhenTappedAround(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(SignIn.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

@@ -21,6 +21,8 @@ class BookedFansVC: UIViewController {
     var travelDate: String = ""
     var station: String = ""
     var destination: String = ""
+    var latitude: Double = 0
+    var longitude: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +46,35 @@ class BookedFansVC: UIViewController {
                     }
                 }
             }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let directionVC = storyboard.instantiateViewController(withIdentifier: "DirectionVC") as? DirectionVC {
+                self.setLongAndLat(destination: self.destination)
+                directionVC.destination = self.destination
+                directionVC.latitude = self.latitude
+                directionVC.longitude = self.longitude
+                self.navigationController?.pushViewController(directionVC, animated: true)
+            }
         }, secondButtonAction: {
             self.dismiss(animated: true)
         })
     }
 }
+
+extension BookedFansVC {
+    func setLongAndLat(destination: String) {
+        let coordinates: [String: (Double, Double)] = [
+            "Alexandria Stadium": (31.1971, 29.9132),
+            "We Salam Stad": (30.1744, 31.4348),
+            "Ismalia Stadium": (30.6015, 32.2741)
+        ]
+        
+        if let (latitude, longitude) = coordinates[destination] {
+            self.latitude = latitude
+            self.longitude = longitude
+        }
+    }
+}
+
 
 extension BookedFansVC{
     func bindBookedFansTableViewToViewModel(){
