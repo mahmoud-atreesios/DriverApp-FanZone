@@ -24,6 +24,7 @@ class HomeVC: UIViewController {
     
     let disposeBag = DisposeBag()
     let viewModel = ViewModel()
+    
     var dates: [(date: Date, display: String)] = []
     
     override func viewDidLoad() {
@@ -119,15 +120,25 @@ extension HomeVC {
         viewModel.tripsData
             .asObservable()
             .bind(to: tripsTableView.rx.items(cellIdentifier: "tripsCell", cellType: TripsTableViewCell.self)) { index, trips, cell in
+                                
                 cell.busStation.text = trips.station
                 cell.busDestination.text = trips.destination
                 cell.travelTime.text = trips.time
                 cell.estimatedArrivalTime.text = trips.estimatedArrivalTime
-                print("\(self.viewModel.tripsData.value)")
+                
+                // Filter the booked fans for the current trip
+                let bookedFansCount = self.viewModel.bookedFans.value.filter {
+                    $0["busNumber"] == trips.busNumber &&
+                    $0["travelDate"] == trips.date &&
+                    $0["busStation"] == trips.station &&
+                    $0["stadiumDestination"] == trips.destination
+                }.count
+                
+                cell.numberOfFans.text = "\(bookedFansCount) Fans"
                 
                 cell.tapAction = {
                     print("Details label tapped at indexPath: \(index)")
-
+                    
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     if let bookedFansVC = storyboard.instantiateViewController(withIdentifier: "BookedFansVC") as? BookedFansVC {
                         bookedFansVC.busNumber = trips.busNumber
@@ -141,7 +152,12 @@ extension HomeVC {
                 
                 print("\(self.viewModel.tripsData.value)")
             }
+            .disposed(by: disposeBag)
         
+        viewModel.bookedFans
+            .subscribe(onNext: { [weak self] _ in
+                self?.tripsTableView.reloadData()
+            })
             .disposed(by: disposeBag)
     }
 }
@@ -155,9 +171,9 @@ extension HomeVC{
         noTripsImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             noTripsImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            noTripsImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200), // 100 points from the bottom
-            noTripsImageView.widthAnchor.constraint(equalToConstant: 200), // Adjust width as needed
-            noTripsImageView.heightAnchor.constraint(equalToConstant: 200) // Adjust height as needed
+            noTripsImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200),
+            noTripsImageView.widthAnchor.constraint(equalToConstant: 200),
+            noTripsImageView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
 }

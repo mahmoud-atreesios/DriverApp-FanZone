@@ -32,7 +32,7 @@ class DirectionVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegat
     var lastUpdatedLocation: CLLocation?
     var hasZoomed = false
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         endTripButton.tintColor = UIColor(red: 138/255, green: 134/255, blue: 97/255, alpha: 1.0)
@@ -43,6 +43,7 @@ class DirectionVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegat
         locationManager.startUpdatingLocation()
         mapView.delegate = self
         mapView.userTrackingMode = .none
+        
         self.navigationItem.hidesBackButton = true
 
         // Calculate initial route

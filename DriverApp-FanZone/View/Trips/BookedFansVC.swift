@@ -48,6 +48,7 @@ class BookedFansVC: UIViewController {
                     }
                 }
             }
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let directionVC = storyboard.instantiateViewController(withIdentifier: "DirectionVC") as? DirectionVC {
                 self.setLongAndLat(destination: self.destination)

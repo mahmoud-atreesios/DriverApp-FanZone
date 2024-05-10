@@ -54,6 +54,9 @@ extension ViewModel{
                                 return nil
                             }
                             
+                            // Fetch booked fans for each trip
+                            self.BookedFans(busNumber: busNumber, travelDate: date, station: station, destination: destination)
+                            
                             return TripsDataModel(tripID: tripID, busNumber: busNumber, date: date, destination: destination, driverID: driverID, estimatedArrivalTime: estimatedArrivalTime, price: price, station: station, time: time, tripStatus: tripStatus)
                         }
                         
@@ -99,7 +102,6 @@ extension ViewModel{
                 
                 self.bookedFans.accept(fetchedBookedFans)
             }
-        
     }
 }
 
