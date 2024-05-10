@@ -21,13 +21,14 @@ class ViewModel{
 }
 
 extension ViewModel{
-    func fetchTripsData(selectedDate: String){
+    func fetchTripsData(selectedDate: String, tripStatus: String){
         let userID = Auth.auth().currentUser?.uid
         
         if let userID = userID{
             db.collection("Trips")
                 .whereField("driverID", isEqualTo: userID)
                 .whereField("date", isEqualTo: selectedDate)
+                .whereField("tripStatus", isEqualTo: tripStatus)
                 .getDocuments { trips, error in
                     if let error = error {
                         print("Error getting trips data \(error.localizedDescription)")
@@ -39,6 +40,7 @@ extension ViewModel{
                         
                         let tripsData = documents.compactMap { document -> TripsDataModel? in
                             let data = document.data()
+                            let tripID = document.documentID
                             // Parse the data and create a TripsDataModel object
                             guard let busNumber = data["busNumber"] as? String,
                                   let date = data["date"] as? String,
@@ -47,16 +49,29 @@ extension ViewModel{
                                   let estimatedArrivalTime = data["estimatedArrivalTime"] as? String,
                                   let price = data["price"] as? String,
                                   let station = data["station"] as? String,
+                                  let tripStatus = data["tripStatus"] as? String,
                                   let time = data["time"] as? String else {
                                 return nil
                             }
                             
-                            return TripsDataModel(busNumber: busNumber, date: date, destination: destination, driverID: driverID, estimatedArrivalTime: estimatedArrivalTime, price: price, station: station, time: time)
+                            return TripsDataModel(tripID: tripID, busNumber: busNumber, date: date, destination: destination, driverID: driverID, estimatedArrivalTime: estimatedArrivalTime, price: price, station: station, time: time, tripStatus: tripStatus)
                         }
                         
                         self.tripsData.accept(tripsData)
                     }
                 }
+        }
+    }
+}
+
+extension ViewModel{
+    func updateTripStatus(tripID: String, newStatus: String) {
+        db.collection("Trips").document(tripID).updateData(["tripStatus": newStatus]) { error in
+            if let error = error {
+                print("Error updating trip status: \(error.localizedDescription)")
+            } else {
+                print("Trip status updated successfully")
+            }
         }
     }
 }

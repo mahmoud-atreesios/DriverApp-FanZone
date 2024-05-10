@@ -14,16 +14,18 @@ class BookedFansVC: UIViewController {
     @IBOutlet weak var bookedFansTableView: UITableView!
     @IBOutlet weak var startTripButton: UIButton!
     
-    let disposeBag = DisposeBag()
-    let viewModel = ViewModel()
+    private let disposeBag = DisposeBag()
+    private let viewModel = ViewModel()
     
     var busNumber: String = ""
     var travelDate: String = ""
     var station: String = ""
     var destination: String = ""
+    var tripID: String = ""
+    
     var latitude: Double = 0
     var longitude: Double = 0
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -52,6 +54,7 @@ class BookedFansVC: UIViewController {
                 directionVC.destination = self.destination
                 directionVC.latitude = self.latitude
                 directionVC.longitude = self.longitude
+                directionVC.tripID = self.tripID
                 self.navigationController?.pushViewController(directionVC, animated: true)
             }
         }, secondButtonAction: {

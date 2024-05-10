@@ -8,6 +8,7 @@
 import Foundation
 
 struct TripsDataModel{
+    let tripID: String
     let busNumber: String
     let date: String
     let destination: String
@@ -16,4 +17,5 @@ struct TripsDataModel{
     let price: String
     let station: String
     let time: String
+    let tripStatus: String
 }

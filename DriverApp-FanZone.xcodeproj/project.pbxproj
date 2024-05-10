@@ -12,6 +12,7 @@
 		1C2173962BDA6FE000793B3C /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2173942BDA6FE000793B3C /* TripsTableViewCell.swift */; };
 		1C2173972BDA6FE000793B3C /* TripsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C2173952BDA6FE000793B3C /* TripsTableViewCell.xib */; };
 		1C2173992BDA7FB900793B3C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2173982BDA7FB900793B3C /* ImageView.swift */; };
+		1C2BC4EC2BEE5E1400EA73AB /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2BC4EB2BEE5E1400EA73AB /* CustomLoader.swift */; };
 		1C3DDCE12BDD7DB800934710 /* TripsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3DDCE02BDD7DB800934710 /* TripsDataModel.swift */; };
 		1CB583452BEC7B7F00E19278 /* DirectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB583442BEC7B7F00E19278 /* DirectionVC.swift */; };
 		1CBC7DBF2BD5256E00010241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC7DBE2BD5256E00010241 /* AppDelegate.swift */; };
@@ -75,6 +76,7 @@
 		1C2173942BDA6FE000793B3C /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
 		1C2173952BDA6FE000793B3C /* TripsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripsTableViewCell.xib; sourceTree = "<group>"; };
 		1C2173982BDA7FB900793B3C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		1C2BC4EB2BEE5E1400EA73AB /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
 		1C3DDCE02BDD7DB800934710 /* TripsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsDataModel.swift; sourceTree = "<group>"; };
 		1CB583442BEC7B7F00E19278 /* DirectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionVC.swift; sourceTree = "<group>"; };
 		1CBC7DBB2BD5256E00010241 /* DriverApp-FanZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DriverApp-FanZone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +221,14 @@
 			path = TripsTableViewCell;
 			sourceTree = "<group>";
 		};
+		1C2BC4EA2BEE5DFD00EA73AB /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				1C2BC4EB2BEE5E1400EA73AB /* CustomLoader.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		1CBC7DB22BD5256E00010241 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +255,7 @@
 				1C1267B32BD57A2600637E38 /* Model */,
 				1C1267B22BD57A1400637E38 /* View */,
 				1C1267B12BD579FC00637E38 /* ViewModel */,
+				1C2BC4EA2BEE5DFD00EA73AB /* Custom */,
 				1C1267B52BD57B3600637E38 /* Assets */,
 				1C1267B42BD57B0F00637E38 /* Supporting files */,
 				1CBF69F82BD59CF400FDADEA /* Extensions */,
@@ -473,6 +484,7 @@
 				1CBC7DC12BD5256E00010241 /* SceneDelegate.swift in Sources */,
 				1CBF69D22BD595A000FDADEA /* TabBar.swift in Sources */,
 				1CBF69FC2BD59D3300FDADEA /* Alert.swift in Sources */,
+				1C2BC4EC2BEE5E1400EA73AB /* CustomLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,9 +31,15 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
         dateCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dateCell")
         tripsTableView.register(UINib(nibName: "TripsTableViewCell", bundle: nil), forCellReuseIdentifier: "tripsCell")
-        viewModel.fetchTripsData(selectedDate: todayDate())
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: Notification.Name("ReloadHomeViewController"), object: nil)
+        viewModel.fetchTripsData(selectedDate: todayDate(), tripStatus: "uncompleted")
         bindingDateCollectionViewToViewModel()
         bindingTripsTableViewToViewModel()
+    }
+    
+    @objc func reloadData() {
+        // Reload your data or perform any other actions needed
+        viewModel.fetchTripsData(selectedDate: todayDate(), tripStatus: "uncompleted")
     }
     
     func todayDate() -> String {
@@ -82,7 +88,7 @@ extension HomeVC {
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 let formattedDate = dateFormatter.string(from: selectedDate)
                 
-                self?.viewModel.fetchTripsData(selectedDate: formattedDate)
+                self?.viewModel.fetchTripsData(selectedDate: formattedDate, tripStatus: "uncompleted")
                 
                 print("Cell tapped at index: \(indexPath.item), Date: \(formattedDate)")
                 self?.viewModel.selectedIndexPath.accept(indexPath)
@@ -128,6 +134,7 @@ extension HomeVC {
                         bookedFansVC.travelDate = trips.date
                         bookedFansVC.station = trips.station
                         bookedFansVC.destination = trips.destination
+                        bookedFansVC.tripID = trips.tripID
                         self.navigationController?.pushViewController(bookedFansVC, animated: true)
                     }
                 }
