@@ -58,7 +58,11 @@ extension ProfileVC{
                 cell.numberOfFans.text = "\(trips.driverPrice)$"
                 cell.detailsLabel.text = "completed"
                 
-                print("\(self.viewModel.tripsData.value)")
+                let driverPrices = self.viewModel.tripsData.value.compactMap { Int($0.driverPrice) }
+                let totalDriverPrice = driverPrices.reduce(0, +) // Calculate the sum of driver prices
+                
+                self.totalSalary.text = "Total: \(totalDriverPrice)$"
+
             }
             .disposed(by: disposeBag)
     }
