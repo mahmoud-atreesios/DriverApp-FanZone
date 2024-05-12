@@ -13,9 +13,10 @@ struct TripsDataModel{
     let date: String
     let destination: String
     let driverID: String
-    let estimatedArrivalTime: String
     let price: String
     let station: String
     let time: String
     let tripStatus: String
+    let availableSeats: Int
+    let driverPrice: String
 }

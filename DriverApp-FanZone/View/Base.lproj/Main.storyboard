@@ -141,15 +141,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYf-jK-4b6">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="230"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FanImage" translatesAutoresizingMaskIntoConstraints="NO" id="hnT-Ig-yPC">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FanImage" translatesAutoresizingMaskIntoConstraints="NO" id="hnT-Ig-yPC">
                                         <rect key="frame" x="8" y="102" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="6fK-MH-wNy"/>
                                             <constraint firstAttribute="width" constant="120" id="OdU-xD-JF4"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mahmoud Atrees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfU-CS-ZJI">
-                                        <rect key="frame" x="136" y="147" width="194" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="......." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfU-CS-ZJI">
+                                        <rect key="frame" x="136" y="147" width="44" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="w22-Zb-iYI"/>
                                         </constraints>
@@ -238,6 +238,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="completedTripsTableView" destination="1GL-Ez-rZ8" id="svm-qJ-2Bh"/>
+                        <outlet property="driverImage" destination="hnT-Ig-yPC" id="EE9-9k-yee"/>
+                        <outlet property="driverName" destination="kfU-CS-ZJI" id="PnT-FP-eSL"/>
+                        <outlet property="totalSalary" destination="ejb-K0-TUP" id="WDg-SR-iC4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="END-0Q-bKn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

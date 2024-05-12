@@ -124,17 +124,7 @@ extension HomeVC {
                 cell.busStation.text = trips.station
                 cell.busDestination.text = trips.destination
                 cell.travelTime.text = trips.time
-                cell.estimatedArrivalTime.text = trips.estimatedArrivalTime
-                
-                // Filter the booked fans for the current trip
-                let bookedFansCount = self.viewModel.bookedFans.value.filter {
-                    $0["busNumber"] == trips.busNumber &&
-                    $0["travelDate"] == trips.date &&
-                    $0["busStation"] == trips.station &&
-                    $0["stadiumDestination"] == trips.destination
-                }.count
-                
-                cell.numberOfFans.text = "\(bookedFansCount) Fans"
+                cell.numberOfFans.text = "\(20 - trips.availableSeats) Fan"
                 
                 cell.tapAction = {
                     print("Details label tapped at indexPath: \(index)")
@@ -154,11 +144,6 @@ extension HomeVC {
             }
             .disposed(by: disposeBag)
         
-        viewModel.bookedFans
-            .subscribe(onNext: { [weak self] _ in
-                self?.tripsTableView.reloadData()
-            })
-            .disposed(by: disposeBag)
     }
 }
 

@@ -17,7 +17,6 @@ class TripsTableViewCell: UITableViewCell {
     @IBOutlet weak var busDestination: UILabel!
     
     @IBOutlet weak var travelTime: UILabel!
-    @IBOutlet weak var estimatedArrivalTime: UILabel!
     
     @IBOutlet weak var numberOfFans: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!

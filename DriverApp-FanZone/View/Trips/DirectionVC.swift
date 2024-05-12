@@ -60,7 +60,7 @@ class DirectionVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegat
             
             showAlert(title: "End Trip", message: "Are you sure you want to end the trip?", firstButtonTitle: "End Trip", secondButtonTitle: "Cancel", firstButtonAction: {
                 if let tripID = self.tripID {
-                    self.viewModel.updateTripStatus(tripID: tripID, newStatus: "Completed")
+                    self.viewModel.updateTripStatus(tripID: tripID, newStatus: "completed")
                     // Show loader
                     self.showLoader()
                     // Wait for 5 seconds
