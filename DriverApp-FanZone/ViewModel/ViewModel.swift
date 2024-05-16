@@ -109,13 +109,13 @@ extension ViewModel{
 }
 
 extension ViewModel {
-    func updateFanBusTicketStatus(fanid: String, busNumber: String, travelDate: String, station: String, destination: String, newTicketStatus: String) {
+    func updateFanBusTicketStatus(ticketTo: String, busNumber: String, travelDate: String, station: String, destination: String, newTicketStatus: String) {
         db.collection("Bus_Tickets")
             .whereField("busNumber", isEqualTo: busNumber)
             .whereField("travelDate", isEqualTo: travelDate)
             .whereField("busStation", isEqualTo: station)
             .whereField("stadiumDestination", isEqualTo: destination)
-            .whereField("userID", isEqualTo: fanid)
+            .whereField("ticketTo", isEqualTo: ticketTo)
             .whereField("ticketStatus", isEqualTo: "Activated")
             .getDocuments { snapshot, error in
                 if let error = error {

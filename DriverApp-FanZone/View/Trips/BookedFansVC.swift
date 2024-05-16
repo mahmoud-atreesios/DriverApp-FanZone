@@ -40,11 +40,11 @@ class BookedFansVC: UIViewController {
             for cell in self.bookedFansTableView.visibleCells as! [BookedFansTableViewCell] {
                 if cell.rightButtonStalker {
                     if let fanID = cell.fanId {
-                        self.viewModel.updateFanBusTicketStatus(fanid: fanID, busNumber: self.busNumber, travelDate: self.travelDate, station: self.station, destination: self.destination, newTicketStatus: "Boarded")
+                        self.viewModel.updateFanBusTicketStatus(ticketTo: fanID, busNumber: self.busNumber, travelDate: self.travelDate, station: self.station, destination: self.destination, newTicketStatus: "Boarded")
                     }
                 } else if cell.leftButtonStalker {
                     if let fanID = cell.fanId {
-                        self.viewModel.updateFanBusTicketStatus(fanid: fanID, busNumber: self.busNumber, travelDate: self.travelDate, station: self.station, destination: self.destination, newTicketStatus: "Absent")
+                        self.viewModel.updateFanBusTicketStatus(ticketTo: fanID, busNumber: self.busNumber, travelDate: self.travelDate, station: self.station, destination: self.destination, newTicketStatus: "Absent")
                     }
                 }
             }
@@ -85,11 +85,11 @@ extension BookedFansVC{
         viewModel.bookedFans
             .asObservable()
             .bind(to: bookedFansTableView.rx.items(cellIdentifier: "bookedFanCell", cellType: BookedFansTableViewCell.self)) { (row, fan, cell) in
-                if let fanID = fan["userID"]?.prefix(4) {
+                if let fanID = fan["ticketTo"]?.prefix(4) {
                     cell.fanID.text = String(fanID)
                 }
-                cell.fanId = fan["userID"]
-                cell.numberOfSeats.text = fan["numberOfSeats"]
+                cell.fanId = fan["ticketTo"]
+                cell.numberOfSeats.text = "1"
             }
             .disposed(by: disposeBag)
     }
